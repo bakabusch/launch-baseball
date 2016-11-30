@@ -1,0 +1,37 @@
+
+
+
+{% extends "baseball/base.html" %}
+
+    {% block content %}
+        <h2>{{ batter.player }}  {{ batter.year }}</h2>
+        <h3>{{ batter.era }} Era</h3>
+        <h3>Stats:</h3>
+
+            <ul>
+
+                <li>Games Played: {{ batter.gp }} </li>
+                <li>    Plate Appearances: {{ batter.pa }}</li>
+                <li>    BA: {{ batter.ba }}</li>
+                <li>   OPS: {{ batter.ops }}</li>
+                <li>   1B: {{ batter.single }}</li>
+                <li>  2B: {{ batter.two }}</li>
+                <li>  3B: {{ batter.three }}</li>
+                <li>  HR: {{ batter.hr }}</li>
+                <li>  Runs: {{ batter.runs }}</li>
+                <li>  RBI: {{ batter.rbi }}</li>
+                <li>  Walks: {{ batter.bb }}</li>
+                <li> Steals: {{ batter.steals }}</li>
+                <li>  UBR: {{ batter.ubr }}</li>
+                <li>  wGDP: {{ batter.wgdp }}</li>
+                <li>  wRC+: {{ batter.wrcplus }}</li>
+
+
+            </ul><br>
+
+                    <h3>Click here to see how this player compares to others</h3>
+
+
+
+    {% endblock content %}
+

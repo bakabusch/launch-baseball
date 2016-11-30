@@ -1,0 +1,14 @@
+
+
+{% extends "baseball/base.html" %}
+
+    {% block content %}
+        <h2>Add a new Player</h2>
+            <form action="{% url 'baseball:new_batter' %}" method="post">
+                {% csrf_token %}
+                {{ form.as_ul }}
+                <button name="submit">add Player</button>
+
+            </form>
+
+    {% endblock content %}

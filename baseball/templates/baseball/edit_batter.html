@@ -1,0 +1,21 @@
+
+
+
+
+{% extends "baseball/base.html" %}
+
+    {% block content %}
+
+        <p><a href="{%url 'baseball:edit_batter' batter.id %}">{{ batter }}</a> </p>
+
+
+        <h2>Edit a Player</h2>
+            <form action="{% url 'baseball:edit_batter' batter.id %}" method="post">
+                {% csrf_token %}
+                {{ form.as_ul }}
+                <button name="submit">Save Changes</button>
+
+            </form>
+
+    {% endblock content %}
+

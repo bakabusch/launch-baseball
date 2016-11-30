@@ -1,0 +1,14 @@
+
+{% extends "baseball/base.html" %}
+
+    {% block content %}
+
+    <h3>Here are your Players:</h3>
+        <ul>
+            {% for batter in all_batters %}
+                <li><a href="{% url 'baseball:detail' batter.id %}">{{batter.player}} {{batter.year}}</a> </li>
+            {% endfor %}
+        </ul>
+    <a href="{% url 'baseball:new_batter' %}">Add a new Player</a>
+
+    {% endblock content %}
