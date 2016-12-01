@@ -16,8 +16,10 @@ Including another URLconf
 
 from django.contrib import admin
 from django.conf.urls import include, url
+from django.contrib.auth.views import login
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^users/', include('users.urls', namespace='users')),
     url(r'^baseball/', include('baseball.urls')),
 ]

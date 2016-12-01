@@ -27,10 +27,12 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+LOGIN_URL = '/users/login' #restricts access
 
 # Application definition
 
 INSTALLED_APPS = [
+    'users.apps.UsersConfig',
     'baseball.apps.BaseballConfig',
     'django.contrib.admin',
     'django.contrib.auth',

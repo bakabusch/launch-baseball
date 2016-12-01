@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404 #does try/catch in one line
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
+from django.contrib.auth.decorators import login_required
 from .models import Batter
 from .forms import BatterForm
 
@@ -13,6 +14,7 @@ def detail(request, batter_id):
     batter = get_object_or_404(Batter, pk=batter_id) #replaces try/except statement
     return render(request, 'baseball/detail.html', {'batter': batter})
 
+@login_required()
 def new_batter(request): #add a new batter
     if request.method != 'POST': #no data submitted, create blank form
         form = BatterForm()
